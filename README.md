@@ -1,4 +1,4 @@
-Smegnets
+<h1>Smegnets</h1>
 
 A magnetic poetry tool to help with creative writing.
 You can drag and re-order the magnets, as well as add and remove magnets.
