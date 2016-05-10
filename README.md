@@ -8,3 +8,5 @@ Smegnets uses Gridster.js to generate magnets.
 You can save the poems and they will be stored in a Google spreadsheet.
 At the moment displaying the saved poems is not working.
 
+Demo: http://fridge-magnets.rhcloud.com/
+
