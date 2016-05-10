@@ -1,0 +1,50 @@
+.header {
+    font-family: 'Slabo 27px', serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.gridster {
+    /*height: 800px;*/
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#results {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    float: left;
+}
+
+li {
+    background-color: cornflowerblue;
+    border: none;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.removeButton {
+    display: none;
+}
+
+li:hover .removeButton {
+    display: inline-block;
+    float: right;
+}
+
+#addMagnetButton {
+    margin: 15px;
+}
