@@ -93,51 +93,33 @@ $(function () {
             var rows = [];
 
             var cells = data.feed.entry;
-        /*
 
-            $.getJSON(JSONURL, function (data) {
+            for (var i = 0; i < cells.length; i++) {
+                var rowObj = {};
+                rowObj.timestamp = cells[i].title.$t;
+                var rowCols = cells[i].content.$t.split(',');
+                for (var j = 0; j < rowCols.length; j++) {
+                    var keyVal = rowCols[j].split(':');
+                    rowObj[keyVal[0].trim()] = keyVal[1].trim();
+                }
+                rows.push(rowObj);
+            }
 
-                var entry = data.feed.entry;
+            var poemData = JSON.stringify(rows);
+            var poemData_parsed = JSON.parse(poemData);
+            console.log(poemData_parsed);
 
-                $(entry).each(function () {
-                    // Column names are name, age, etc.
-                    console.log('moro');
-                    $('.results').prepend('<h2>' + this.gsx$poemtitle.$t + '</h2>');
-                });
-
-            });
-        */
-
-                        for (var i = 0; i < cells.length; i++) {
-                            var rowObj = {};
-                            rowObj.timestamp = cells[i].title.$t;
-                            var rowCols = cells[i].content.$t.split(',');
-                            for (var j = 0; j < rowCols.length; j++) {
-                                var keyVal = rowCols[j].split(':');
-                                rowObj[keyVal[0].trim()] = keyVal[1].trim();
-                            }
-                            rows.push(rowObj);
-                        }
-
-                        var poemData = JSON.stringify(rows);
-                        var poemData_parsed = JSON.parse(poemData);
-                        console.log(poemData_parsed);
-                        
-                        //var raw = document.createElement('p');
-                        //raw.innerText = JSON.stringify(rows);
-                        //document.body.appendChild(raw);
-                        
-                    }
-
-                    $.ajax({
-                        url: JSONURL,
-                        success: function (data) {
-                            callback(data);
-                        }
-                    });
-    
         }
 
-        getPoemDataFromGoogle();
+        $.ajax({
+            url: JSONURL,
+            success: function (data) {
+                callback(data);
+            }
+        });
+
+    }
+
+    getPoemDataFromGoogle();
 
 });
